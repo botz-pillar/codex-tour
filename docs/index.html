@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Codex Tour — A friendly OpenAI Codex CLI onboarding tour</title>
+  <meta name="description" content="A free, role-aware onboarding tour for people brand-new to the OpenAI Codex CLI. Built for IT and InfoSec professionals new to AI agents.">
+  <meta property="og:title" content="Codex Tour — Friendly Codex CLI onboarding">
+  <meta property="og:description" content="Free, open-source plugin. Walks IT/InfoSec newcomers through their first OpenAI Codex CLI session in about 15 minutes.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://botz-pillar.github.io/codex-tour/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            canvas: '#0a0612',
+            'canvas-2': '#14091f',
+            'canvas-3': '#1e1230',
+            primary: '#a78bfa',
+            'primary-bright': '#c4a8ff',
+            'primary-deep': '#7c3aed',
+            ink: '#f4f0ff',
+            'ink-muted': '#a89bc4',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html, body { background: #0a0612; color: #f4f0ff; }
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .ambient-glow {
+      background: radial-gradient(ellipse at 50% 0%, rgba(124,58,237,0.22) 0%, rgba(124,58,237,0.06) 35%, transparent 65%);
+    }
+    /* Terminal-chevron mark — distinct from NewClauder splat */
+    .term-mark {
+      display: inline-flex;
+      align-items: baseline;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-weight: 700;
+      color: #c4a8ff;
+      text-shadow: 0 0 14px rgba(167,139,250,0.55), 0 0 28px rgba(124,58,237,0.35);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .term-mark .chev1 {
+      background: linear-gradient(180deg, #c4a8ff 0%, #a78bfa 60%, #7c3aed 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .term-mark .chev2 {
+      background: linear-gradient(180deg, #a78bfa 0%, #7c3aed 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-left: -0.15em;
+    }
+    .term-mark .cursor {
+      display: inline-block;
+      width: 0.45em;
+      height: 0.9em;
+      background: #c4a8ff;
+      box-shadow: 0 0 10px rgba(196,168,255,0.7);
+      margin-left: 0.18em;
+      transform: translateY(0.05em);
+      animation: blink 1.05s steps(2, start) infinite;
+      border-radius: 1px;
+    }
+    @keyframes blink { to { opacity: 0; } }
+    .term-mark.sm { font-size: 1.6rem; }
+    .term-mark.lg { font-size: 4.6rem; }
+    .copy-btn.copied { background: #7c3aed !important; color: white !important; }
+    h2[id], h3[id] { scroll-margin-top: 96px; }
+    a { transition: color 120ms ease, opacity 120ms ease; }
+    code { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.9em; }
+    .prose-section p { line-height: 1.7; }
+    .prose-section a { color: #c4a8ff; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(196,168,255,0.4); }
+    .prose-section a:hover { text-decoration-color: #c4a8ff; }
+  </style>
+</head>
+<body class="antialiased">
+  <div class="ambient-glow fixed inset-0 pointer-events-none -z-10"></div>
+
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-canvas/70 border-b border-primary/10">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <span class="term-mark sm" aria-hidden="true"><span class="chev1">&gt;</span><span class="chev2">&gt;</span><span class="cursor"></span></span>
+        <span class="font-bold text-ink">Codex Tour</span>
+      </a>
+      <nav class="hidden sm:flex items-center gap-6 text-sm text-ink-muted">
+        <a href="#install" class="hover:text-primary-bright">Install</a>
+        <a href="#what" class="hover:text-primary-bright">What it does</a>
+        <a href="https://github.com/botz-pillar/codex-tour" class="hover:text-primary-bright">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="top" class="max-w-5xl mx-auto px-6 pt-20 pb-16 text-center">
+    <div class="flex justify-center mb-8">
+      <span class="term-mark lg" aria-hidden="true"><span class="chev1">&gt;</span><span class="chev2">&gt;</span><span class="cursor"></span></span>
+    </div>
+    <h1 class="text-5xl sm:text-6xl font-black tracking-tight mb-6">Codex Tour</h1>
+    <p class="text-xl text-ink-muted max-w-2xl mx-auto leading-relaxed mb-3">
+      A friendly, role-aware first session for people brand-new to the <strong class="text-ink">OpenAI Codex CLI</strong>.
+    </p>
+    <p class="text-base text-ink-muted max-w-2xl mx-auto leading-relaxed mb-10">
+      Built for IT and InfoSec folks new to AI agents. About 15 minutes from install to first useful session.
+    </p>
+    <div class="flex flex-wrap gap-3 justify-center">
+      <a href="https://github.com/botz-pillar/codex-tour#readme" class="px-6 py-3 bg-primary-deep hover:bg-primary text-white rounded-lg font-semibold transition">Read the install guide</a>
+      <a href="https://github.com/botz-pillar/codex-tour" class="px-6 py-3 border border-primary/30 hover:border-primary text-ink rounded-lg font-semibold transition">View on GitHub</a>
+    </div>
+    <p class="text-sm text-ink-muted mt-6">Codex sibling of <a href="https://github.com/botz-pillar/NewClauder" class="underline decoration-primary/40 hover:decoration-primary">NewClauder</a> (the Claude Code one).</p>
+  </section>
+
+  <section id="install" class="max-w-3xl mx-auto px-6 py-12 prose-section">
+    <h2 class="text-3xl font-bold mb-6 text-ink">Install in two steps</h2>
+    <p class="text-ink-muted mb-6">Read the full README first — every Codex CLI plugin deserves that, this one included. The short version:</p>
+
+    <div class="bg-canvas-2 border border-primary/15 rounded-lg p-5 mb-4">
+      <p class="text-sm text-ink-muted mb-2">1. From your shell:</p>
+      <pre class="font-mono text-primary-bright"><code>codex plugin marketplace add botz-pillar/codex-tour</code></pre>
+    </div>
+
+    <div class="bg-canvas-2 border border-primary/15 rounded-lg p-5 mb-8">
+      <p class="text-sm text-ink-muted mb-2">2. Launch Codex, type <code class="text-primary-bright">/plugins</code>, find <strong>codex-tour</strong>, install:</p>
+      <pre class="font-mono text-primary-bright"><code>codex
+/plugins</code></pre>
+    </div>
+
+    <p class="text-ink-muted">Then in your Codex session, type any of:</p>
+    <ul class="list-disc list-inside text-ink mt-3 space-y-1">
+      <li><em>"I'm new to Codex CLI, walk me through it"</em></li>
+      <li><em>"I'm a helpdesk guy trying to break into security — help me get started with Codex"</em></li>
+      <li><em>"I work in compliance and my boss told me to look at the Codex CLI. Is this for me?"</em></li>
+    </ul>
+    <p class="text-ink-muted mt-6">The tour asks two calibrating questions, gives you the safety story, and walks you through one real thing chosen for your role. By the end you'll have a file you made and a starter-prompts cheat sheet saved to your Documents folder.</p>
+  </section>
+
+  <section id="what" class="max-w-3xl mx-auto px-6 py-12 prose-section">
+    <h2 class="text-3xl font-bold mb-6 text-ink">What you'll learn — in plain English</h2>
+    <ul class="space-y-3 text-ink-muted">
+      <li><strong class="text-ink">Sessions</strong> — your conversation; what's remembered and what gets summarized.</li>
+      <li><strong class="text-ink">Tools</strong> — the verbs Codex uses on your machine (read, write, run, search).</li>
+      <li><strong class="text-ink">Approvals + sandbox modes</strong> — the approve-before-acting system, plus <code>read-only</code> / <code>workspace-write</code> / <code>danger-full-access</code>.</li>
+      <li><strong class="text-ink">Slash commands</strong> — <code>/help</code>, <code>/approvals</code>, <code>/plugins</code>, <code>/model</code>.</li>
+      <li><strong class="text-ink">Skills</strong> — packaged know-how that activates automatically (like this tour).</li>
+      <li><strong class="text-ink">MCP servers</strong> — external systems Codex can plug into. Each is its own trust decision.</li>
+      <li><strong class="text-ink">AGENTS.md</strong> — a file that teaches Codex about your project's conventions.</li>
+    </ul>
+    <p class="text-ink-muted mt-8">You'll learn the names <em>while you use them</em>, not as a lecture upfront.</p>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-6 py-12 prose-section">
+    <h2 class="text-3xl font-bold mb-6 text-ink">What you do NOT need first</h2>
+    <p class="text-ink-muted mb-4">Things people <em>think</em> they need before starting — they don't:</p>
+    <ul class="list-disc list-inside text-ink-muted space-y-1">
+      <li>The terminal / command line in depth (just need to launch <code>codex</code>)</li>
+      <li>Git or GitHub</li>
+      <li>Python or any programming language</li>
+      <li>Docker</li>
+      <li>Regular expressions</li>
+      <li>"AI prompt engineering"</li>
+    </ul>
+    <p class="text-ink-muted mt-6">Pick those up later, when a real task forces you into them. Day one: type, read, and review proposed commands before approving.</p>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-6 py-12 prose-section">
+    <h2 class="text-3xl font-bold mb-6 text-ink">A note on safety</h2>
+    <p class="text-ink-muted">Codex CLI runs with your user's permissions when you approve a command — capped by the active sandbox. <strong class="text-ink">Read the proposed command before you say yes.</strong> For your first session, launch with <code class="text-primary-bright">codex --sandbox read-only</code> — Codex can look and propose but can't change anything until you flip it back.</p>
+    <p class="text-ink-muted mt-4">If you're on a work laptop, check with IT/security before installing. The README walks through the work-laptop check, the cost honesty, and the install path step-by-step.</p>
+  </section>
+
+  <footer class="max-w-5xl mx-auto px-6 py-12 text-center text-sm text-ink-muted border-t border-primary/10">
+    <p>Built by <a href="https://github.com/botz-pillar" class="text-primary-bright hover:text-primary">Josh Botz</a> · MIT licensed · <a href="https://github.com/botz-pillar/codex-tour/issues" class="text-primary-bright hover:text-primary">Report a bug</a> · <a href="mailto:josh@pillarsecurity.io" class="text-primary-bright hover:text-primary">josh@pillarsecurity.io</a></p>
+    <p class="mt-3">Codex sibling of <a href="https://github.com/botz-pillar/NewClauder" class="text-primary-bright hover:text-primary">NewClauder</a>.</p>
+  </footer>
+</body>
+</html>
