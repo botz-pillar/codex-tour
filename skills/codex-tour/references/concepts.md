@@ -163,7 +163,7 @@ Configure them in `~/.codex/config.toml`. Once configured, those tools show up a
 Two related but distinct things:
 
 - **`AGENTS.md`** — a file in a project directory that teaches Codex about *that project*. Conventions, gotchas, what not to touch, where things live. Loaded automatically when a session starts in that folder. (This is the Codex equivalent of Claude Code's `CLAUDE.md`.) A global `~/.codex/AGENTS.md` also works for personal preferences that apply across all your projects.
-- **Persistent context** — Codex does not have a Claude-Code-style `memory/` directory. The way you "remember" things across sessions is by writing to an `AGENTS.md` (project-local or global) or by saving notes in your own filesystem and pasting them back in. Plain markdown, you own it, you can read it.
+- **Persistent context** — across sessions, you persist things by writing to an `AGENTS.md` (project or global) or saving a plain markdown note and pasting it back in. You own the file, you can read it, you delete it when you want.
 
 **Why they matter:** Without these, every session starts from zero. With them, Codex shows up already knowing the project and the person.
 

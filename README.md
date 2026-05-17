@@ -66,7 +66,7 @@ When you chat with the Codex CLI, your messages go to OpenAI. The legal terms de
 
 ## 3. What you'll actually be able to do
 
-Concrete, not abstract. By tomorrow morning you could be doing things like:
+By tomorrow morning you could be doing things like:
 
 - **Pasting a suspicious email or alert into the terminal** — Codex reads the headers and body, pulls out the indicators, drafts a verdict paragraph you could send back to the reporter, and saves the analysis to a file.
 - **Pointing Codex at a folder of logs** — it ranks the noisy IPs, finds the talkers, and outputs a CSV you can hand to the next analyst.
@@ -265,7 +265,7 @@ By the end of the tour you'll understand — *in plain English*:
 - **Folders & projects** — Codex works on one folder at a time; opening another folder is how you switch projects
 - **Slash commands** — typed shortcuts like `/help`, `/approvals`, `/model`, `/plugins`, `/clear`
 - **Skills** — packaged know-how that activates automatically based on what you ask (like this tour)
-- **MCP servers** — external systems Codex can plug into (GitHub, Notion, Splunk, etc.) — each one is its own trust decision, the same way every plugin is
+- **MCP servers** — external systems Codex can plug into (GitHub, Notion, your SIEM, your ticketing system) — each one is its own trust decision, the same way every plugin is
 - **Subagents** — focused helpers for big jobs that would clog the main chat
 - **`AGENTS.md`** — a file in your project that teaches Codex its conventions and gotchas
 
@@ -381,6 +381,6 @@ MIT — see [LICENSE](./LICENSE). Use it, fork it, share it, remix it for your o
 
 ## Who made this
 
-Second one I built. [NewClauder](https://github.com/botz-pillar/NewClauder) came first — same idea for Claude Code. I'm [Josh Botz](https://github.com/botz-pillar) — cloud security practitioner, builder of [AI Cloud Security Lab](https://www.skool.com/cloud-security-lab), occasional writer of skills like this one.
+[Josh Botz](https://github.com/botz-pillar) — cloud security practitioner, builder of [AI Cloud Security Lab](https://www.skool.com/cloud-security-lab), occasional writer of skills like this one. [NewClauder](https://github.com/botz-pillar/NewClauder) is the Claude Code sibling of this tour.
 
 If this helped you, the kindest thing you can do is tell one other person in IT or security who's struggling to get started with AI tools.
