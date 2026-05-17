@@ -17,12 +17,12 @@
       },
       "category": "Education",
       "source": {
-        "source": "url",
-        "url": "https://github.com/botz-pillar/codex-tour.git"
+        "source": "local",
+        "path": "."
       },
       "policy": {
         "installation": "AVAILABLE",
-        "authentication": "NONE"
+        "authentication": "ON_INSTALL"
       },
       "homepage": "https://github.com/botz-pillar/codex-tour"
     }

@@ -13,6 +13,6 @@ Initial public release.
   - Section 6–7: account + install via `brew install --cask codex` or `npm i -g @openai/codex`.
   - Section 8: read-it-before-you-install discipline as a standing rule for any third-party Codex plugin.
 - Tour itself recommends `--sandbox read-only` mode (Codex's plan-mode equivalent) for the first session and any unfamiliar data.
-- Memory write at end of tour — role, terminal comfort, first artifact, next step. No conversation content. Stored at `${CODEX_HOME:-$HOME/.codex}/memory/user_codex_cli_onboarding.md`.
+- Session note at end of tour — role, terminal comfort, first artifact, next step. No conversation content. Saved to `~/Documents/codex-tour-session-<date>.md` (or optionally into the project's `AGENTS.md` so Codex auto-loads it next session).
 - Six role-conditioned example banks: SOC, GRC, IT generalist, pentest, helpdesk/career-changer, dev, plus a "just trying it out" lane.
 - Two rounds of `battle-test` review (3-persona iterate tier) ran before tagging v1.0.0.

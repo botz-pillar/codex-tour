@@ -70,7 +70,8 @@ Codex asks before anything risky, *and* the sandbox mode caps what it could do e
 **Approval policy** (orthogonal to the sandbox — controls *when* Codex pauses to ask):
 
 - **`on-request`** — Codex asks before each risky action. Use this until you have a feel for the tool.
-- **`unless-trusted`** — Codex auto-runs commands it considers low-risk, asks for the rest.
+- **`untrusted`** — Codex auto-runs commands it considers trusted/low-risk, asks for the rest. (The config-file value is the bare word `untrusted`, even though people informally call this "unless-trusted".)
+- **`on-failure`** — Codex auto-runs, but pauses to ask if a command fails.
 - **`never` (`--ask-for-approval never`)** — Codex never asks; only ever pair this with `--sandbox read-only` if you must use it at all. Pairing `never` with `workspace-write` or `danger-full-access` is how people accidentally destroy their work.
 
 Set or change at runtime with `/approvals`. Permanent defaults live in `~/.codex/config.toml`.
@@ -161,14 +162,14 @@ Configure them in `~/.codex/config.toml`. Once configured, those tools show up a
 
 Two related but distinct things:
 
-- **`AGENTS.md`** — a file in a project directory that teaches Codex about *that project*. Conventions, gotchas, what not to touch, where things live. Loaded automatically when a session starts in that folder. (This is the Codex equivalent of Claude Code's `CLAUDE.md`.)
-- **Memory** — persistent notes about *you* that survive across sessions. Lives in `${CODEX_HOME:-$HOME/.codex}/memory/`. Used for things like your role, preferences, recurring context.
+- **`AGENTS.md`** — a file in a project directory that teaches Codex about *that project*. Conventions, gotchas, what not to touch, where things live. Loaded automatically when a session starts in that folder. (This is the Codex equivalent of Claude Code's `CLAUDE.md`.) A global `~/.codex/AGENTS.md` also works for personal preferences that apply across all your projects.
+- **Persistent context** — Codex does not have a Claude-Code-style `memory/` directory. The way you "remember" things across sessions is by writing to an `AGENTS.md` (project-local or global) or by saving notes in your own filesystem and pasting them back in. Plain markdown, you own it, you can read it.
 
 **Why they matter:** Without these, every session starts from zero. With them, Codex shows up already knowing the project and the person.
 
 **InfoSec example:** An `AGENTS.md` in your IR notebook folder that says: "This folder contains incident data. Default to read-only sandbox. Never `rm` anything. All findings get appended to `findings.md`, not overwritten." That preamble travels with the folder.
 
-**Codex Tour writes one memory note at the end of the tour** — your role, your terminal comfort, the first artifact you produced, and your chosen next step. No conversation content. You can read or delete it any time at `${CODEX_HOME:-$HOME/.codex}/memory/user_codex_cli_onboarding.md`.
+**Codex Tour writes one session note at the end of the tour** — your role, your terminal comfort, the first artifact you produced, and your chosen next step. It saves to `~/Documents/codex-tour-session-<date>.md` so you can paste it back in the next time you launch Codex (or drop it into your project's `AGENTS.md`). No conversation content. Delete the file any time.
 
 ---
 

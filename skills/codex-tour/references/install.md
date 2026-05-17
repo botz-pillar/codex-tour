@@ -36,6 +36,15 @@ If they're hesitant, suggest they try ChatGPT free at [chatgpt.com](https://chat
 
 Ask which OS: **macOS, Windows, or Linux.**
 
+### Opening a terminal first
+
+If they've truly never opened one:
+- **macOS:** Press `Cmd+Space`, type `Terminal`, press Enter.
+- **Windows:** Press `Win`, type `Terminal` or `PowerShell`, press Enter.
+- **Linux:** Look for *Terminal* in the apps menu, or `Ctrl+Alt+T`.
+
+A window opens with a blinking cursor. That's the terminal. Every command below gets pasted there.
+
 ### macOS
 
 Two ways:
@@ -54,7 +63,7 @@ Two ways:
    ```
    brew install node
    ```
-   Then `codex` in any terminal.
+   Then `codex` in any terminal. If `npm install -g` prompts for `sudo`, that's touching system paths — pause and confirm before approving.
 
 ### Windows
 

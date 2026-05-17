@@ -92,11 +92,11 @@ After all four: "Want me to go slower on any of those, or are we good to keep mo
 
 Say this verbatim or close to it:
 
-> "Three things you probably want to know before we go further:
+> "Three things before we go further:
 >
-> 1. **Where your stuff goes.** When you chat with me, your messages go to OpenAI. By default, Codex CLI sessions follow the API/business data policy of whichever account you signed in with — for a personal ChatGPT account, that's the ChatGPT terms; for an OpenAI API key, that's the API terms. Treat this like any cloud tool — don't paste secrets, client data, PHI, or anything classified without checking your org's policy first. OpenAI's Trust Portal and the [Codex CLI docs](https://github.com/openai/codex) have the authoritative details.
-> 2. **Nothing changes without you saying yes.** I won't run a command, edit a file, or touch anything outside this folder unless you approve it — and if we're in `read-only` sandbox, I can't touch anything regardless of what I propose.
-> 3. **There's a read-only mode.** If you're nervous, you can launch with `codex --sandbox read-only` — or type `/approvals` inside a running session and pick read-only. I can look at things and propose ideas but can't change anything until you flip it back. Good training-wheels setting."
+> 1. **Where your stuff goes.** Your messages go to OpenAI. By default, API and ChatGPT Business/Enterprise traffic isn't used to train models — but treat this like any cloud tool. Don't paste secrets, client data, PHI, or anything classified without checking your org's policy first. The [OpenAI Trust Portal](https://trust.openai.com/) has the authoritative version.
+> 2. **Nothing changes without you saying yes.** I won't run a command or edit a file unless you approve it.
+> 3. **Read-only mode exists.** Launch with `codex --sandbox read-only` (or type `/approvals` in a running session). I can look and propose but can't change anything. Good training-wheels setting for your first run."
 
 Then: "Make sense? Anything you want to ask before we do something real?"
 
@@ -184,11 +184,13 @@ Don't read these as bullet lists at the user. Frame each as a mini-story so they
 - A messy report draft. We rewrite the executive summary in client-readable English, then make sure every finding has CVSS, evidence, and remediation.
 
 **Helpdesk / career-changer**
-- The CTF you solved last weekend. We turn your notes into a clean markdown writeup with code blocks, screenshots referenced, and a "what I learned" section. Then we initialize a git repo, commit it, and push it to your GitHub — narrating every git step so you actually learn what's happening.
+- The CTF you solved last weekend. We turn your notes into a clean markdown writeup with code blocks, screenshots referenced, and a "what I learned" section. If you already have a GitHub account, we'll initialize a repo, commit, and push it — narrating every git step. If you don't, we'll save it locally and you can publish it the day you make a GitHub account.
 - A homelab inventory. Point me at a folder. We build `homelab.md` with everything you have running (VMs, containers, services, IPs), and set up an `AGENTS.md` so future-you doesn't have to re-explain the setup.
-- A recent CVE you've been reading about. We pick one, draft a detection rule (Sigma format — works across SIEMs), and push it to a "detections" repo on your GitHub. Now you've got a portfolio piece.
+- A recent CVE you've been reading about. We pick one and draft a detection rule (Sigma format — works across SIEMs). It saves locally; pushing it to a GitHub "detections" repo is an optional follow-up the day you want a portfolio piece.
 - The Security+ topic you're stuck on. Paste your study notes. I'll quiz you Socratically and write the gaps to a file so you can review later.
 - A job description you're targeting. We extract the required skills, gap-check against your resume, and build a 3-task plan for the next month that closes the biggest gap.
+
+(GitHub is *not* required for the tour — every helpdesk pitch above produces something useful on your local disk first. The push-to-GitHub bit is bonus, only if you already have an account.)
 
 **Pentest-adjacent or blue-team-curious (mix-and-match)**
 - "Show me what a real attack chain looks like." We walk through a published incident report (LockBit, Scattered Spider, anything recent) and trace the steps to MITRE ATT&CK techniques. Output: a personal cheat sheet.
@@ -216,30 +218,26 @@ If they picked the 5-minute version, after the core loop wraps up:
 5. **Write a memory note for next time** — see "Memory write at end of tour" below.
 6. **Stop.** Do not continue into Step 4 unless they ask.
 
-### Memory write at end of tour
+### Session note at end of tour
 
-At the close of either the 5-minute or full tour, write a single memory file so the *next* session lands warm.
+At the close of either the 5-minute or full tour, write a single session note so the user can re-orient next time.
 
-Save to `${CODEX_HOME:-$HOME/.codex}/memory/user_codex_cli_onboarding.md`. (Create the `memory/` folder if it doesn't exist.) Use this content:
+Save to `~/Documents/codex-tour-session-<YYYY-MM-DD>.md`. Use this content:
 
 ```markdown
----
-name: user-codex-cli-onboarding
-description: User finished the codex-tour onboarding — role, terminal comfort, first artifact produced, suggested next step.
-metadata:
-  type: user
----
-
-User finished the codex-tour onboarding on <YYYY-MM-DD>.
+# Codex Tour — session note (<YYYY-MM-DD>)
 
 - **Role:** <SOC / GRC / IT / pentest / helpdesk-to-security / dev / just trying it>
 - **Terminal comfort:** <never opened it / sometimes / lives in it>
 - **First artifact produced:** <file path + one-line description>
-- **Next step they picked:** <one-line summary>
-- **Notes for next session:** Greet them warm; reference what they built; offer to keep going on their next step before defaulting to anything else.
+- **Next step picked:** <one-line summary>
+
+Greet me warm next time; reference what I built; offer to keep going on the next step.
 ```
 
-Tell the user: "I just saved a note about today so when you come back, I'll greet you knowing what we did. Nothing about your work content — just role, the file we made, and what's next."
+Tell the user: "I just saved `~/Documents/codex-tour-session-<date>.md` — paste it into Codex next time and we'll pick up where we left off. Nothing about your work content — just role, the file we made, and what's next."
+
+Then offer: "Want me to also drop that into an `AGENTS.md` in this folder, so Codex picks it up automatically when you launch here? Optional."
 
 ---
 
