@@ -1,9 +1,9 @@
 ---
-name: codex-tour
+name: new-codexer
 description: Interactive onboarding tour for users new to the OpenAI Codex CLI, especially IT and InfoSec professionals (SOC analysts, GRC/compliance, pentesters, IT generalists, helpdesk-to-security career changers) who may also be new to the terminal, GitHub, and AI agents. Use this skill whenever a user signals they are getting started — phrases like "I'm new to Codex", "I'm new to Codex CLI", "how do I use Codex", "walk me through Codex", "what can the Codex CLI do", "getting started with Codex", "first time using Codex", "I just installed Codex", "what should I try first with Codex", "is Codex CLI for me", "teach me Codex CLI", "Codex CLI tutorial" — or shows confusion about core concepts (sessions, tools, slash commands, skills, MCP, agents, approvals, sandbox modes, AGENTS.md) without naming a specific syntactic question. Do NOT trigger when a proficient user asks a specific configuration or syntax question ("how do I configure an MCP server for Codex with header auth", "what's the right sandbox_mode for workspace-write with no network"). Tour is conversational, role-aware, privacy-honest, teaches concepts in-flight while doing real work, and ends with one concrete artifact the user can point at.
 ---
 
-# Codex Tour
+# NewCodexer
 
 A guided, conversational onboarding for someone meeting the OpenAI Codex CLI for the first time. Designed for IT and InfoSec people who may also be new to the terminal, GitHub, and AI agents — and who are quietly worried about looking dumb or breaking something.
 
@@ -130,7 +130,7 @@ When you write a file during the tour:
 2. Tell them what's in it in one line.
 3. Offer to open it for them:
    - macOS: "Want me to run `open ~/Documents/first-session.md` so you can see it?"
-   - Windows: "If you press Win+E and paste this into the address bar, it'll show you the file: `%USERPROFILE%\\Documents\\first-session.md`"
+   - Windows (WSL2): "I can run `explorer.exe ~/Documents/first-session.md` from this terminal and Windows Explorer will pop up with the file selected. From File Explorer directly, the path is `\\\\wsl$\\Ubuntu\\home\\<your-username>\\Documents\\first-session.md`."
    - Linux: "`xdg-open ~/Documents/first-session.md` will open it in whatever you've got set as the default."
 
 This solves the silent "where did that go?" question that kills newcomer confidence.
@@ -213,7 +213,7 @@ If they picked the 5-minute version, after the core loop wraps up:
 
 1. **Recap one sentence** — "So the loop is: you ask, I propose, you approve, we iterate."
 2. **Name the concepts they just used in passing** — "And along the way you already used four big ideas: tool calls, approvals, the context window, and skills triggering. That's most of the Codex CLI, honestly."
-3. **Hand them the cheat sheet** — "I'm going to save you a starter-prompts file with 10 things you can try when you're back here next time, tuned to your role. Easier than staring at a blinking cursor." Then read `references/starter-prompts.md`, extract the 10 prompts for their role, and save them to `~/Documents/codex-tour-starter-prompts.md`. Tell them the full path and offer to open it.
+3. **Hand them the cheat sheet** — "I'm going to save you a starter-prompts file with 10 things you can try when you're back here next time, tuned to your role. Easier than staring at a blinking cursor." Then read `references/starter-prompts.md`, extract the 10 prompts for their role, and save them to `~/Documents/new-codexer-starter-prompts.md`. Tell them the full path and offer to open it.
 4. **Name one next step** (see Step 5).
 5. **Write a memory note for next time** — see "Memory write at end of tour" below.
 6. **Stop.** Do not continue into Step 4 unless they ask.
@@ -222,10 +222,10 @@ If they picked the 5-minute version, after the core loop wraps up:
 
 At the close of either the 5-minute or full tour, write a single session note so the user can re-orient next time.
 
-Save to `~/Documents/codex-tour-session-<YYYY-MM-DD>.md`. Use this content:
+Save to `~/Documents/new-codexer-session-<YYYY-MM-DD>.md`. Use this content:
 
 ```markdown
-# Codex Tour — session note (<YYYY-MM-DD>)
+# NewCodexer — session note (<YYYY-MM-DD>)
 
 - **Role:** <SOC / GRC / IT / pentest / helpdesk-to-security / dev / just trying it>
 - **Terminal comfort:** <never opened it / sometimes / lives in it>
@@ -235,7 +235,7 @@ Save to `~/Documents/codex-tour-session-<YYYY-MM-DD>.md`. Use this content:
 Greet me warm next time; reference what I built; offer to keep going on the next step.
 ```
 
-Tell the user: "I just saved `~/Documents/codex-tour-session-<date>.md` — paste it into Codex next time and we'll pick up where we left off. Nothing about your work content — just role, the file we made, and what's next."
+Tell the user: "I just saved `~/Documents/new-codexer-session-<date>.md` — paste it into Codex next time and we'll pick up where we left off. Nothing about your work content — just role, the file we made, and what's next."
 
 Then offer: "Want me to also drop that into an `AGENTS.md` in this folder, so Codex picks it up automatically when you launch here? Optional."
 
@@ -282,7 +282,7 @@ Common snags and what to say:
 - **"It proposed something that scared me"** — Just say "no, don't do that — instead [what you want]." It will adjust.
 - **"I lost track of what we were doing"** — Ask "what's the current state and what's the next step?" — it will recap.
 - **"This is moving too fast"** — Slow them down. Drop back to one sentence per turn.
-- **"Where did the file you made go?"** — You should have already told them. Repeat the full path. Offer `open <path>` on Mac, the Win+E trick on Windows.
+- **"Where did the file you made go?"** — You should have already told them. Repeat the full path. Offer `open <path>` on Mac, `explorer.exe <path>` on Windows (WSL2), `xdg-open <path>` on Linux.
 - **"Why doesn't `/help` work?"** — They're probably in ChatGPT (the website), not the Codex CLI. Point them at `references/where-am-i.md` or the README's "Where am I?" section.
 
 ---

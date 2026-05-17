@@ -1,6 +1,6 @@
 # "Where am I running this?" — surface-by-surface reference
 
-Most newcomer confusion isn't about *what Codex does*, it's about *which OpenAI surface they're in*. Use this reference any time the user gets tangled up between the Codex CLI (this terminal, where Codex Tour lives), ChatGPT (the website and app), and the OpenAI Playground.
+Most newcomer confusion isn't about *what Codex does*, it's about *which OpenAI surface they're in*. Use this reference any time the user gets tangled up between the Codex CLI (this terminal, where NewCodexer lives), ChatGPT (the website and app), and the OpenAI Playground.
 
 Read the section that matches what the user reports seeing.
 
@@ -38,17 +38,17 @@ An extension that puts the Codex CLI into the editor you already use. Skip this 
 
 The chat window in your web browser at `chatgpt.com`. This is normal ChatGPT — great for asking questions and getting written work — but it does **not** run on your computer, does **not** edit files on your disk, and does **not** support Codex slash commands or skills.
 
-The free ChatGPT plan lives here. Codex Tour and the Codex CLI are not on the free plan.
+The free ChatGPT plan lives here. NewCodexer and the Codex CLI are not on the free plan.
 
 If you opened this tour expecting it to work in chatgpt.com: it won't. You need the Codex CLI.
 
 ### ChatGPT in the iPhone or Android app
 
-Same as chatgpt.com — a chat, no file access, no Codex slash commands. Useful for quick questions on the go. Not where Codex Tour lives.
+Same as chatgpt.com — a chat, no file access, no Codex slash commands. Useful for quick questions on the go. Not where NewCodexer lives.
 
 ### OpenAI Playground (platform.openai.com)
 
-A developer-focused API testing surface. Different product entirely — for trying out model API calls and tuning parameters. Codex Tour doesn't apply here.
+A developer-focused API testing surface. Different product entirely — for trying out model API calls and tuning parameters. NewCodexer doesn't apply here.
 
 ---
 

@@ -1,14 +1,14 @@
 {
-  "name": "codex-tour",
-  "version": "1.0.0",
-  "description": "Codex Tour — a friendly, role-aware first session for people brand-new to the OpenAI Codex CLI. Built for IT and InfoSec folks new to AI agents.",
+  "name": "new-codexer",
+  "version": "1.0.1",
+  "description": "NewCodexer — a friendly, role-aware first session for people brand-new to the OpenAI Codex CLI. Built for IT and InfoSec folks new to AI agents.",
   "author": {
     "name": "Josh Botz",
     "url": "https://github.com/botz-pillar"
   },
   "license": "MIT",
-  "homepage": "https://github.com/botz-pillar/codex-tour",
-  "repository": "https://github.com/botz-pillar/codex-tour.git",
+  "homepage": "https://github.com/botz-pillar/NewCodexer",
+  "repository": "https://github.com/botz-pillar/NewCodexer.git",
   "keywords": [
     "codex",
     "codex-cli",

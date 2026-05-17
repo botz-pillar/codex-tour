@@ -40,7 +40,7 @@ Ask which OS: **macOS, Windows, or Linux.**
 
 If they've truly never opened one:
 - **macOS:** Press `Cmd+Space`, type `Terminal`, press Enter.
-- **Windows:** Press `Win`, type `Terminal` or `PowerShell`, press Enter.
+- **Windows:** Codex CLI requires **WSL2** (Windows Subsystem for Linux 2) — PowerShell alone won't work. If they don't have WSL2 yet: open PowerShell as administrator, run `wsl --install`, reboot when prompted. After reboot, launch *Ubuntu* from the Start menu. Every command below gets pasted into that Ubuntu / WSL2 window — not PowerShell.
 - **Linux:** Look for *Terminal* in the apps menu, or `Ctrl+Alt+T`.
 
 A window opens with a blinking cursor. That's the terminal. Every command below gets pasted there.
@@ -67,15 +67,25 @@ Two ways:
 
 ### Windows
 
-Two ways:
+**WSL2 is required.** Codex CLI does not run natively on PowerShell or `cmd.exe` — OpenAI only supports it on Windows 11 via WSL2. There's no second path.
 
-1. **npm** — requires Node.js. Install via [winget](https://learn.microsoft.com/en-us/windows/package-manager/winget/) (`winget install OpenJS.NodeJS`) or download from [nodejs.org](https://nodejs.org/). Then:
+1. **Install WSL2** if they don't have it:
+   ```powershell
+   wsl --install
    ```
+   (Run as administrator from PowerShell. Reboot when prompted. Defaults to Ubuntu.)
+
+2. **Open the Ubuntu / WSL2 terminal** from the Start menu. From here, every command is run inside Ubuntu — not PowerShell.
+
+3. **Install Node + Codex** inside WSL2:
+   ```bash
+   sudo apt update && sudo apt install -y nodejs npm
    npm install -g @openai/codex
+   codex
    ```
-   Then run `codex` in PowerShell or Windows Terminal.
+   For newer Node versions, point them at [nvm](https://github.com/nvm-sh/nvm) instead of apt.
 
-2. **WSL** — Windows Subsystem for Linux. Option for terminal die-hards but flag it as a "set aside an hour" project for newcomers.
+Note on file paths: a path like `~/Documents/foo.md` inside WSL2 lives at `\\wsl$\Ubuntu\home\<user>\Documents\foo.md` from Windows Explorer. Mention this if they ask "where did the file go?".
 
 ### Linux
 

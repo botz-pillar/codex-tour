@@ -1,4 +1,4 @@
-# Codex Tour
+# NewCodexer
 
 **Get from install to your first useful OpenAI Codex CLI session in about 15 minutes — even if you've never spent time in a terminal.**
 
@@ -127,7 +127,7 @@ The Codex CLI is a terminal tool. There's no desktop app — you'll be running i
 ### Step 7a — Open a terminal
 
 - **macOS:** Press `Cmd+Space`, type `Terminal`, press Enter. (Or open `/Applications/Utilities/Terminal.app`.)
-- **Windows:** Press `Win`, type `Terminal` or `PowerShell`, press Enter. Use *Windows Terminal* if you have a choice (it's the modern one).
+- **Windows:** Codex CLI requires **WSL2** (Windows Subsystem for Linux 2) — it does not run natively in PowerShell or `cmd.exe`. Open PowerShell as administrator and run `wsl --install` (this installs Ubuntu by default; reboot when prompted). After reboot, launch *Ubuntu* from the Start menu — that opens your WSL2 terminal. Every Codex command from here on gets typed inside the WSL2 / Ubuntu window, not PowerShell. Full guide: [learn.microsoft.com/windows/wsl/install](https://learn.microsoft.com/en-us/windows/wsl/install).
 - **Linux:** Look for *Terminal* or *Console* in your applications menu. Or `Ctrl+Alt+T` on most distros.
 
 A new window opens with a blinking cursor. That's the terminal. Every command in this section gets pasted there, followed by Enter.
@@ -151,7 +151,7 @@ npm install -g @openai/codex
 ```
 
 - **macOS:** install Node first with `brew install node` (or download from [nodejs.org](https://nodejs.org/)). On some macOS setups `npm install -g` wants `sudo` — that's a yellow flag, not a red one, but it means the install is touching system paths. If that prompt appears and you're not sure, stop and ask before approving.
-- **Windows:** install Node via [winget](https://learn.microsoft.com/en-us/windows/package-manager/winget/) (`winget install OpenJS.NodeJS`) or download from [nodejs.org](https://nodejs.org/). Then run `codex` in PowerShell or Windows Terminal.
+- **Windows (inside WSL2 / Ubuntu):** install Node inside your WSL2 shell with `sudo apt update && sudo apt install -y nodejs npm` (or use [nvm](https://github.com/nvm-sh/nvm) for newer Node versions). Then `npm install -g @openai/codex` and run `codex` — all inside the Ubuntu / WSL2 terminal, not PowerShell. **Homebrew on Windows is not supported by Codex CLI** — the Brew path is macOS-only.
 - **Linux:** install Node from your distro's package manager (`apt`, `dnf`, `pacman`). Then run `codex` in any terminal.
 
 > **Heads up on managed machines:** Homebrew or npm-global may need admin rights. If the install halts with a credentials prompt, don't enter someone else's credentials — go back to section 2 and check policy first.
@@ -180,7 +180,7 @@ If `/help` does nothing or just prints `/help` as text, you're probably in the w
 
 ## 8. Install this tour
 
-Before you install: this plugin is a folder of plain markdown instructions plus a couple of supporting reference files. It makes no network calls, adds no tools to the Codex CLI, and requests no additional permissions. The source is at [github.com/botz-pillar/codex-tour](https://github.com/botz-pillar/codex-tour) — every file is human-readable.
+Before you install: this plugin is a folder of plain markdown instructions plus a couple of supporting reference files. It makes no network calls, adds no tools to the Codex CLI, and requests no additional permissions. The source is at [github.com/botz-pillar/NewCodexer](https://github.com/botz-pillar/NewCodexer) — every file is human-readable.
 
 > **Standing rule for any Codex CLI plugin: read it before you install it.** This plugin's source is public and every file is plain markdown. The same discipline applies to *every* plugin you'll consider going forward — third-party plugins can install tools, request permissions, or include scripts that run on your machine. Trust nothing you can't read. This is the single most valuable security habit for working with an agentic AI tool.
 
@@ -191,7 +191,7 @@ The Codex CLI has two steps for installing a plugin from GitHub:
 **Exit Codex first** (type `/exit` if you're inside it). Then in your terminal, run:
 
 ```bash
-codex plugin marketplace add botz-pillar/codex-tour
+codex plugin marketplace add botz-pillar/NewCodexer
 ```
 
 You should see a confirmation that the marketplace was added. If you see an error, copy it, launch `codex` again, paste it back with *"what does this mean?"* — Codex is good at decoding its own errors.
@@ -210,7 +210,7 @@ Inside the Codex TUI, type:
 /plugins
 ```
 
-This opens the plugin browser. Find **codex-tour** in the list, highlight it, and confirm install. The browser shows you everything the plugin will install before you say yes. Approve it.
+This opens the plugin browser. Find **new-codexer** in the list, highlight it, and confirm install. The browser shows you everything the plugin will install before you say yes. Approve it.
 
 > If the `/plugins` browser doesn't show up, you're either on an older Codex CLI version (run `brew upgrade --cask codex` or `npm update -g @openai/codex`) or you're not inside the Codex CLI. Use the `/help` test from section 10.
 
@@ -235,7 +235,7 @@ Default tour length: **5–10 minutes**, depending on how deep your role-matched
 
 > **Want to be extra-safe on your first run?** Relaunch with `codex --sandbox read-only` before starting the tour. The agent can look at your files and propose actions, but can't change anything. Switch to `workspace-write` (the default) once you're comfortable.
 
-> If the tour doesn't auto-trigger from those phrases, force-invoke it by typing `$codex-tour` at the start of your message — that explicitly tells Codex to load this skill.
+> If the tour doesn't auto-trigger from those phrases, force-invoke it by typing `$new-codexer` at the start of your message — that explicitly tells Codex to load this skill.
 
 ---
 
@@ -327,7 +327,7 @@ You don't need any of this for the tour. Bookmark this section for the *day afte
 → The install didn't put `codex` on your `$PATH`, or the terminal window predates the install. Open a new terminal and try again. If it still fails, re-run the install step from [section 7](#7-install-the-codex-cli-on-your-computer).
 
 **"It installed but the tour won't start."**
-→ Try one of the trigger phrases in [section 9](#9-start-the-tour) verbatim — exact wording like *"I'm new to Codex CLI, walk me through it"* works best. If still nothing, prefix your message with `$codex-tour` to force-invoke it.
+→ Try one of the trigger phrases in [section 9](#9-start-the-tour) verbatim — exact wording like *"I'm new to Codex CLI, walk me through it"* works best. If still nothing, prefix your message with `$new-codexer` to force-invoke it.
 
 **"The installer asked for admin rights and I can't proceed."**
 → Your laptop is managed by IT. Go back to [section 2](#2-before-you-install) and check policy. Don't enter someone else's credentials.
@@ -339,21 +339,21 @@ You don't need any of this for the tour. Bookmark this section for the *day afte
 → Copy the message, paste it into the Codex CLI session, ask *"what does this mean and how do I fix it?"* Codex is good at this. Genuinely.
 
 **"How do I uninstall the tour?"**
-→ Open `/plugins` inside Codex, highlight codex-tour, and choose Uninstall. (Or edit `~/.codex/config.toml` and set `enabled = false` under the codex-tour plugin block.) Nothing else stays on your machine.
+→ Open `/plugins` inside Codex, highlight new-codexer, and choose Uninstall. (Or edit `~/.codex/config.toml` and set `enabled = false` under the new-codexer plugin block.) Nothing else stays on your machine.
 
 **"Something is broken and the above didn't help."**
-→ [Open a GitHub issue](https://github.com/botz-pillar/codex-tour/issues) (need a free GitHub account — see [section 13](#13-helpful-links-for-beginners) if you don't have one yet), or **email josh@pillarsecurity.io** — you don't need GitHub.
+→ [Open a GitHub issue](https://github.com/botz-pillar/NewCodexer/issues) (need a free GitHub account — see [section 13](#13-helpful-links-for-beginners) if you don't have one yet), or **email josh@pillarsecurity.io** — you don't need GitHub.
 
 ---
 
 ## Privacy
 
-- **This plugin makes no network calls of its own.** It's a folder of markdown instructions that Codex reads when you start the tour. No analytics, no telemetry, no third-party services. The repo is public at [github.com/botz-pillar/codex-tour](https://github.com/botz-pillar/codex-tour) — every file is readable before you install.
+- **This plugin makes no network calls of its own.** It's a folder of markdown instructions that Codex reads when you start the tour. No analytics, no telemetry, no third-party services. The source at [github.com/botz-pillar/NewCodexer](https://github.com/botz-pillar/NewCodexer) is plain markdown — every file is readable before you install.
 - **Your conversation with Codex is governed by OpenAI's terms.** The plugin doesn't change that — see the [OpenAI Trust Portal](https://trust.openai.com/) for data handling, retention, and zero-retention enterprise options.
-- **The tour writes one note at the end** to `~/Documents/codex-tour-session-<date>.md` so the next time you come back, you can paste it in and Codex picks up where you left off. Here's exactly what gets written, structurally:
+- **The tour writes one note at the end** to `~/Documents/new-codexer-session-<date>.md` so the next time you come back, you can paste it in and Codex picks up where you left off. Here's exactly what gets written, structurally:
 
 ```markdown
-# Codex Tour — session note (YYYY-MM-DD)
+# NewCodexer — session note (YYYY-MM-DD)
 
 - **Role:** <SOC / GRC / IT / pentest / helpdesk-to-security / dev / just trying it>
 - **Terminal comfort:** <never opened it / sometimes / lives in it>
@@ -369,7 +369,7 @@ No conversation content. Delete the file any time. The tour will offer to add th
 
 ## Feedback & contact
 
-- **Found a bug or have an idea?** [Open a GitHub issue](https://github.com/botz-pillar/codex-tour/issues).
+- **Found a bug or have an idea?** [Open a GitHub issue](https://github.com/botz-pillar/NewCodexer/issues).
 - **Never used GitHub before?** Email **josh@pillarsecurity.io** — happy to hear it. I read every message and try to reply within a week. If something is broken for you, you're not the only one — write me and I'll fix it.
 - **Want to share what you built during the tour?** Same email. I love seeing first-day artifacts.
 

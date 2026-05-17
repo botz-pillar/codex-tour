@@ -1,6 +1,6 @@
 # Starter prompts — by role
 
-A handout for users finishing the tour. When the user reaches the 5-minute exit ritual, extract the 10 prompts for their role from this file, write them to `~/Documents/codex-tour-starter-prompts.md`, tell them the full path, and offer to open it.
+A handout for users finishing the tour. When the user reaches the 5-minute exit ritual, extract the 10 prompts for their role from this file, write them to `~/Documents/new-codexer-starter-prompts.md`, tell them the full path, and offer to open it.
 
 These are written in the user's voice — what they would type to the Codex CLI — not in Codex's voice. The point is to remove "what do I even ask for?" friction the day after the tour.
 

@@ -24,7 +24,7 @@ Tools are the verbs Codex can perform. The built-in ones include:
 
 - Read a file
 - Write or edit a file
-- Run a shell command (Bash/zsh on Mac/Linux, PowerShell on Windows)
+- Run a shell command (Bash/zsh on macOS/Linux; on Windows, Codex runs inside WSL2 so it's Bash there too)
 - Search files (grep — find text in files; glob — find files by name pattern)
 - Fetch a URL (pulls one specific page)
 - Search the web (general search; may be gated behind a feature flag depending on your config)
@@ -124,7 +124,7 @@ A skill is a folder of instructions (and sometimes scripts) that teaches Codex h
 
 **InfoSec example:** A "log-triage" skill that knows your SIEM's quirks, your IR runbook format, and your ticket template — fires whenever you start an investigation, stays silent otherwise.
 
-**Trust note:** skills can include scripts that execute on your machine. Read every skill before installing it — the SKILL.md and any scripts under `scripts/`. Codex Tour is just markdown, no scripts; not every skill is.
+**Trust note:** skills can include scripts that execute on your machine. Read every skill before installing it — the SKILL.md and any scripts under `scripts/`. NewCodexer is just markdown, no scripts; not every skill is.
 
 ---
 
@@ -169,7 +169,7 @@ Two related but distinct things:
 
 **InfoSec example:** An `AGENTS.md` in your IR notebook folder that says: "This folder contains incident data. Default to read-only sandbox. Never `rm` anything. All findings get appended to `findings.md`, not overwritten." That preamble travels with the folder.
 
-**Codex Tour writes one session note at the end of the tour** — your role, your terminal comfort, the first artifact you produced, and your chosen next step. It saves to `~/Documents/codex-tour-session-<date>.md` so you can paste it back in the next time you launch Codex (or drop it into your project's `AGENTS.md`). No conversation content. Delete the file any time.
+**NewCodexer writes one session note at the end of the tour** — your role, your terminal comfort, the first artifact you produced, and your chosen next step. It saves to `~/Documents/new-codexer-session-<date>.md` so you can paste it back in the next time you launch Codex (or drop it into your project's `AGENTS.md`). No conversation content. Delete the file any time.
 
 ---
 
