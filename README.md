@@ -32,7 +32,7 @@ Then inside Codex, type *"I'm new to Codex CLI, walk me through it"* and the tou
 
 If any of that wasn't obvious, the rest of the README walks every step in plain English.
 
-**Running this for a team?** See [TRAINING.md](./TRAINING.md) — a 1-hour trainer's runbook for taking 5–15 InfoSec folks from zero to first artifact. **Need to install without GitHub access?** See [OFFLINE-INSTALL.md](./OFFLINE-INSTALL.md) for the Drive-share / local-folder install path.
+**Running this for a team?** See [TRAINING.md](./TRAINING.md) — a 1-hour trainer's runbook for taking 5–15 InfoSec folks from zero to first artifact. **Need to install without GitHub access?** See [OFFLINE-INSTALL.md](./OFFLINE-INSTALL.md) for the Drive-share / local-folder install path. **Terminal blocked at work but VS Code allowed?** See [VSCODE-INSTALL.md](./VSCODE-INSTALL.md) for the IDE-extension install path.
 
 ---
 
