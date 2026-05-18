@@ -12,6 +12,28 @@ This is the second one I built. NewClauder came first — same idea for [Claude 
 
 ---
 
+## TL;DR — already comfortable with the terminal?
+
+Skip ahead. Three commands and a trigger phrase:
+
+```bash
+# 1. Install Codex CLI (macOS — Homebrew is easiest)
+brew install --cask codex          # or: npm install -g @openai/codex
+codex                              # sign in (ChatGPT recommended)
+
+# 2. Install this tour from inside Codex
+codex plugin marketplace add botz-pillar/NewCodexer
+codex                              # then inside: /plugins → install new-codexer
+```
+
+Then inside Codex, type *"I'm new to Codex CLI, walk me through it"* and the tour starts. If it doesn't auto-fire, prefix with `$new-codexer`.
+
+**Windows users:** Codex CLI requires WSL2 — `wsl --install` first, then run everything above inside the Ubuntu/WSL2 shell. See §7a.
+
+If any of that wasn't obvious, the rest of the README walks every step in plain English.
+
+---
+
 ## Table of contents
 
 1. [Is this for you?](#1-is-this-for-you)
@@ -324,7 +346,10 @@ You don't need any of this for the tour. Bookmark this section for the *day afte
 → Check that you're in the Codex CLI, not chatgpt.com in a browser. Use the `/help` test in [section 10](#10-wait-where-am-i).
 
 **"`codex` says command not found."**
-→ The install didn't put `codex` on your `$PATH`, or the terminal window predates the install. Open a new terminal and try again. If it still fails, re-run the install step from [section 7](#7-install-the-codex-cli-on-your-computer).
+→ The install didn't put `codex` on your `$PATH`, or the terminal window predates the install. Open a new terminal and try again. If it still fails, re-run the install step from [section 7](#7-install-the-codex-cli-on-your-computer). To verify the install on the *right* terminal: `codex --version` should print a version string.
+
+**"`codex plugin marketplace add` says authentication failed / repository not found (for a repo I know exists)."**
+→ The plugin source is a private GitHub repo and your git credentials aren't wired up on this machine. Either run `gh auth login` (HTTPS path) or make sure your SSH key is loaded (`ssh -T git@github.com` should greet you). Then re-run the `marketplace add` — or use the SSH URL form: `codex plugin marketplace add git@github.com:owner/repo.git`.
 
 **"It installed but the tour won't start."**
 → Try one of the trigger phrases in [section 9](#9-start-the-tour) verbatim — exact wording like *"I'm new to Codex CLI, walk me through it"* works best. If still nothing, prefix your message with `$new-codexer` to force-invoke it.
