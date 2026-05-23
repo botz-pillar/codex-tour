@@ -8,7 +8,7 @@ If you work in IT or security, just heard about the Codex CLI (or are setting it
 
 > **A note about safety first:** because the Codex CLI can run commands and edit files on your machine, "no prior experience required" applies to *getting set up* — not to *what you let it do*. Sections 2, 3, and 4 below cover the honest version of what that means before you install anything.
 
-This is the second one I built. NewClauder came first — same idea for [Claude Code](https://github.com/botz-pillar/NewClauder).
+This is the second one I built. NewClauder came first — same idea for [Claude Code](https://github.com/joshbotz/NewClauder).
 
 ---
 
@@ -22,7 +22,7 @@ brew install --cask codex          # or: npm install -g @openai/codex
 codex                              # sign in (ChatGPT recommended)
 
 # 2. Install this tour from inside Codex
-codex plugin marketplace add botz-pillar/NewCodexer
+codex plugin marketplace add joshbotz/NewCodexer
 codex                              # then inside: /plugins → install new-codexer
 ```
 
@@ -204,7 +204,7 @@ If `/help` does nothing or just prints `/help` as text, you're probably in the w
 
 ## 8. Install this tour
 
-Before you install: this plugin is a folder of plain markdown instructions plus a couple of supporting reference files. It makes no network calls, adds no tools to the Codex CLI, and requests no additional permissions. The source is at [github.com/botz-pillar/NewCodexer](https://github.com/botz-pillar/NewCodexer) — every file is human-readable.
+Before you install: this plugin is a folder of plain markdown instructions plus a couple of supporting reference files. It makes no network calls, adds no tools to the Codex CLI, and requests no additional permissions. The source is at [github.com/joshbotz/NewCodexer](https://github.com/joshbotz/NewCodexer) — every file is human-readable.
 
 > **Standing rule for any Codex CLI plugin: read it before you install it.** This plugin's source is public and every file is plain markdown. The same discipline applies to *every* plugin you'll consider going forward — third-party plugins can install tools, request permissions, or include scripts that run on your machine. Trust nothing you can't read. This is the single most valuable security habit for working with an agentic AI tool.
 
@@ -215,7 +215,7 @@ The Codex CLI has two steps for installing a plugin from GitHub:
 **Exit Codex first** (type `/exit` if you're inside it). Then in your terminal, run:
 
 ```bash
-codex plugin marketplace add botz-pillar/NewCodexer
+codex plugin marketplace add joshbotz/NewCodexer
 ```
 
 You should see a confirmation that the marketplace was added. If you see an error, copy it, launch `codex` again, paste it back with *"what does this mean?"* — Codex is good at decoding its own errors.
@@ -369,13 +369,13 @@ You don't need any of this for the tour. Bookmark this section for the *day afte
 → Open `/plugins` inside Codex, highlight new-codexer, and choose Uninstall. (Or edit `~/.codex/config.toml` and set `enabled = false` under the new-codexer plugin block.) Nothing else stays on your machine.
 
 **"Something is broken and the above didn't help."**
-→ [Open a GitHub issue](https://github.com/botz-pillar/NewCodexer/issues) (need a free GitHub account — see [section 13](#13-helpful-links-for-beginners) if you don't have one yet), or **email josh@pillarsecurity.io** — you don't need GitHub.
+→ [Open a GitHub issue](https://github.com/joshbotz/NewCodexer/issues) (need a free GitHub account — see [section 13](#13-helpful-links-for-beginners) if you don't have one yet), or **email josh@pillarsecurity.io** — you don't need GitHub.
 
 ---
 
 ## Privacy
 
-- **This plugin makes no network calls of its own.** It's a folder of markdown instructions that Codex reads when you start the tour. No analytics, no telemetry, no third-party services. The source at [github.com/botz-pillar/NewCodexer](https://github.com/botz-pillar/NewCodexer) is plain markdown — every file is readable before you install.
+- **This plugin makes no network calls of its own.** It's a folder of markdown instructions that Codex reads when you start the tour. No analytics, no telemetry, no third-party services. The source at [github.com/joshbotz/NewCodexer](https://github.com/joshbotz/NewCodexer) is plain markdown — every file is readable before you install.
 - **Your conversation with Codex is governed by OpenAI's terms.** The plugin doesn't change that — see the [OpenAI Trust Portal](https://trust.openai.com/) for data handling, retention, and zero-retention enterprise options.
 - **The tour writes one note at the end** to `~/Documents/new-codexer-session-<date>.md` so the next time you come back, you can paste it in and Codex picks up where you left off. Here's exactly what gets written, structurally:
 
@@ -396,7 +396,7 @@ No conversation content. Delete the file any time. The tour will offer to add th
 
 ## Feedback & contact
 
-- **Found a bug or have an idea?** [Open a GitHub issue](https://github.com/botz-pillar/NewCodexer/issues).
+- **Found a bug or have an idea?** [Open a GitHub issue](https://github.com/joshbotz/NewCodexer/issues).
 - **Never used GitHub before?** Email **josh@pillarsecurity.io** — happy to hear it. I read every message and try to reply within a week. If something is broken for you, you're not the only one — write me and I'll fix it.
 - **Want to share what you built during the tour?** Same email. I love seeing first-day artifacts.
 
@@ -408,6 +408,6 @@ MIT — see [LICENSE](./LICENSE). Use it, fork it, share it, remix it for your o
 
 ## Who made this
 
-[Josh Botz](https://github.com/botz-pillar) — cloud security practitioner, builder of [AI Cloud Security Lab](https://www.skool.com/cloud-security-lab), occasional writer of skills like this one. [NewClauder](https://github.com/botz-pillar/NewClauder) is the Claude Code sibling of this tour.
+[Josh Botz](https://github.com/joshbotz) — cloud security practitioner working on AI agent security, occasional writer of skills like this one. [NewClauder](https://github.com/joshbotz/NewClauder) is the Claude Code sibling of this tour.
 
 If this helped you, the kindest thing you can do is tell one other person in IT or security who's struggling to get started with AI tools.

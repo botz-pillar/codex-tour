@@ -16,7 +16,7 @@ A short pre-read email to attendees so they show up with the install already don
 >
 > Hey team — for tomorrow's session we'll go hands-on with the OpenAI Codex CLI. Two things to do tonight or first thing tomorrow morning, takes about 10 minutes total:
 >
-> 1. **Install Codex CLI** on your laptop. Walkthroughs by OS are in the README at https://github.com/botz-pillar/NewCodexer#7-install-the-codex-cli-on-your-computer.
+> 1. **Install Codex CLI** on your laptop. Walkthroughs by OS are in the README at https://github.com/joshbotz/NewCodexer#7-install-the-codex-cli-on-your-computer.
 >     - macOS: `brew install --cask codex`
 >     - Linux: `npm install -g @openai/codex`
 >     - **Windows: WSL2 is required** — run `wsl --install` from an admin PowerShell, reboot, then install inside Ubuntu. Side-quest is about 15 minutes including the reboot. If this is new to you, do it tonight, not in the session.
@@ -109,7 +109,7 @@ Live-walk this on screen, they follow along:
 /exit
 
 # 2. add the marketplace
-codex plugin marketplace add botz-pillar/NewCodexer
+codex plugin marketplace add joshbotz/NewCodexer
 
 # 3. launch Codex, install via TUI
 codex

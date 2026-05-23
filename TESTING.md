@@ -56,13 +56,13 @@ Confirm it works: inside the `codex` session, type `/help` — you should see a 
 **Exit Codex first** if you're in it (`/exit`). Then from your shell:
 
 ```bash
-codex plugin marketplace add botz-pillar/NewCodexer
+codex plugin marketplace add joshbotz/NewCodexer
 ```
 
 If the shorthand resolution fails because of how `gh` is set up, fall back to the SSH form:
 
 ```bash
-codex plugin marketplace add git@github.com:botz-pillar/NewCodexer.git
+codex plugin marketplace add git@github.com:joshbotz/NewCodexer.git
 ```
 
 You should see a confirmation that the marketplace was added.
@@ -146,13 +146,13 @@ For any non-trivial bug: jot it in your scratch notes, finish the test (don't ge
 ## 6. After the test passes — flip to public (1 min)
 
 ```bash
-gh repo edit botz-pillar/NewCodexer --visibility public --accept-visibility-change-consequences
+gh repo edit joshbotz/NewCodexer --visibility public --accept-visibility-change-consequences
 ```
 
-GitHub Pages will resume serving at https://botz-pillar.github.io/NewCodexer/ within a minute or two. Confirm by curling:
+GitHub Pages will resume serving at https://joshbotz.github.io/NewCodexer/ within a minute or two. Confirm by curling:
 
 ```bash
-curl -sI https://botz-pillar.github.io/NewCodexer/ | head -5
+curl -sI https://joshbotz.github.io/NewCodexer/ | head -5
 ```
 
 You should see `HTTP/2 200`.
@@ -163,8 +163,8 @@ You should see `HTTP/2 200`.
 
 The team will run the exact same flow from §1–§3 above on their own machines. Give them:
 
-- This repo: https://github.com/botz-pillar/NewCodexer
-- The landing page: https://botz-pillar.github.io/NewCodexer/
+- This repo: https://github.com/joshbotz/NewCodexer
+- The landing page: https://joshbotz.github.io/NewCodexer/
 - The README — that's the entire onboarding doc, designed to walk a complete beginner from install to first artifact
 
 **Windows folks on the team:** flag in advance that they'll need WSL2 (Codex CLI does not run natively on Windows). Setting up WSL2 is a 15-minute side-quest — better they do it before the demo than during. Point them at README §7a.
@@ -175,7 +175,7 @@ The team will run the exact same flow from §1–§3 above on their own machines
 
 ## 8. Tomorrow's success criteria
 
-- [ ] Installed from `botz-pillar/NewCodexer` on the other Mac, end-to-end, in under 10 min
+- [ ] Installed from `joshbotz/NewCodexer` on the other Mac, end-to-end, in under 10 min
 - [ ] Tour triggered from one of the documented natural-language phrases (no `$` force-invoke needed)
 - [ ] Produced a real artifact saved to `~/Documents/`
 - [ ] Session note + starter-prompts also saved as documented

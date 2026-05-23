@@ -88,7 +88,7 @@ If it doesn't auto-fire, prefix with `$new-codexer`. Same behavior as the GitHub
 | Situation | Use |
 |---|---|
 | Internal team demo, repo still private | **Drive zip** — no GitHub auth headache |
-| Public launch, posted to LinkedIn / Skool | **GitHub marketplace** (after flipping public) |
+| Public launch, posted to LinkedIn or social | **GitHub marketplace** (after flipping public) |
 | Locked-down corporate laptop with no GitHub access | **Drive zip** — works wherever Codex CLI installs |
 | Air-gapped or offline environment | **Drive zip** (or USB stick) |
 | Anyone you want to be able to upgrade themselves later | **GitHub marketplace** |

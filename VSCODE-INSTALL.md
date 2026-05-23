@@ -89,7 +89,7 @@ If you get a reply, the extension is working. If you don't, jump to [§6 trouble
 
 ## 4. Installing the NewCodexer tour without a terminal
 
-The tour is a Codex **plugin** (a skill / slash-command bundle). On the CLI you'd install it with `codex plugin marketplace add botz-pillar/NewCodexer` + `/plugins` — but neither of those steps requires a terminal *if* the Codex VS Code extension exposes the same commands. Two paths, try them in order:
+The tour is a Codex **plugin** (a skill / slash-command bundle). On the CLI you'd install it with `codex plugin marketplace add joshbotz/NewCodexer` + `/plugins` — but neither of those steps requires a terminal *if* the Codex VS Code extension exposes the same commands. Two paths, try them in order:
 
 ### Path A — Use slash commands from inside the Codex panel (try this first)
 
@@ -113,7 +113,7 @@ If `/plugins` does nothing, try:
 
 If your version of the extension doesn't have a plugin browser yet, the tour still works as a prompt — the skill auto-loads when Codex sees a tour-style request. In the Codex panel, paste:
 
-> *I'm new to Codex CLI, walk me through it. Use the NewCodexer tour from github.com/botz-pillar/NewCodexer.*
+> *I'm new to Codex CLI, walk me through it. Use the NewCodexer tour from github.com/joshbotz/NewCodexer.*
 
 If Codex doesn't have the tour skill installed, it will fall back to a generic onboarding chat — still useful, but not the curated NewCodexer flow. To get the real tour without a terminal, see Path C.
 
@@ -121,7 +121,7 @@ If Codex doesn't have the tour skill installed, it will fall back to a generic o
 
 This is the "bring your own plugin" workaround when the extension can't install plugins itself and you have no terminal.
 
-1. In a browser, go to [github.com/botz-pillar/NewCodexer](https://github.com/botz-pillar/NewCodexer) and click the green **Code → Download ZIP** button.
+1. In a browser, go to [github.com/joshbotz/NewCodexer](https://github.com/joshbotz/NewCodexer) and click the green **Code → Download ZIP** button.
 2. Unzip it anywhere — say `Documents/NewCodexer-main/`.
 3. In VS Code, open that folder (`File → Open Folder…`).
 4. In the Codex chat panel, paste:
@@ -168,7 +168,7 @@ Irrelevant for this guide — you're not using the terminal. Just use `File → 
 You have two choices: install WSL2 (which requires the terminal you don't have — dead end) or use the extension's native-Windows sandbox mode if your version supports it. Check the Codex panel's settings for a "sandbox" or "execution mode" option. If only WSL is offered, you're stuck on this machine and need IT to either unblock WSL or approve a different path.
 
 **Anything else.**
-Copy the exact error, paste it into the Codex chat panel with *"what does this mean and what should I try?"* — Codex is good at decoding its own errors. If it can't help, open an issue at [github.com/botz-pillar/NewCodexer/issues](https://github.com/botz-pillar/NewCodexer/issues) with the error text and your VS Code + extension versions.
+Copy the exact error, paste it into the Codex chat panel with *"what does this mean and what should I try?"* — Codex is good at decoding its own errors. If it can't help, open an issue at [github.com/joshbotz/NewCodexer/issues](https://github.com/joshbotz/NewCodexer/issues) with the error text and your VS Code + extension versions.
 
 ---
 
@@ -176,7 +176,7 @@ Copy the exact error, paste it into the Codex chat panel with *"what does this m
 
 - **Not a way to evade IT policy.** If your company hasn't approved Codex, none of this is for you. Ask first.
 - **Not a permanent substitute for the CLI.** The terminal CLI gets new features first, has a richer plugin ecosystem, and is the supported path for serious work. This page exists so a blocked-terminal coworker can get a first useful session without waiting six months for IT to unblock the shell.
-- **Not Claude.** This repo is for the OpenAI **Codex** CLI / IDE extension. The Claude Code sibling project is [NewClauder](https://github.com/botz-pillar/NewClauder) — different tool, different install path. If you actually meant Claude, you want NewClauder.
+- **Not Claude.** This repo is for the OpenAI **Codex** CLI / IDE extension. The Claude Code sibling project is [NewClauder](https://github.com/joshbotz/NewClauder) — different tool, different install path. If you actually meant Claude, you want NewClauder.
 
 ---
 
