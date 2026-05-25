@@ -24,5 +24,5 @@
   <text x="100" y="525" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="32" fill="#a89bc4">A friendly first session for the OpenAI Codex CLI</text>
   <text x="100" y="575" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="22" fill="#a89bc4" opacity="0.85">Built for IT and InfoSec folks new to AI agents · MIT</text>
 
-  <text x="1100" y="585" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-weight="500" font-size="20" fill="#a78bfa" opacity="0.7">github.com/botz-pillar/NewCodexer</text>
+  <text x="1100" y="585" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-weight="500" font-size="20" fill="#a78bfa" opacity="0.7">github.com/joshbotz/NewCodexer</text>
 </svg>
