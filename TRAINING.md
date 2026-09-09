@@ -26,7 +26,7 @@ A short pre-read email to attendees so they show up with the install already don
 >
 > Bring: laptop, charger, a synthetic phishing email or a sample log file from your queue (anything non-sensitive — we'll use it as practice data).
 >
-> Questions: <Josh's contact>
+> Questions: <your contact>
 
 Adjust org-specific bits (Enterprise seat, sample-data prompt) before sending.
 
@@ -116,7 +116,7 @@ codex
 /plugins   # → find new-codexer, install
 ```
 
-### Path B — Drive zip (private launch / internal demo)
+### Path B — Drive zip (internal demo)
 
 Share the link in chat. They click, download, unzip to `~/Documents/NewCodexer`. Then:
 

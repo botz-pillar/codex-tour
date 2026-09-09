@@ -2,7 +2,7 @@
 
 ## 1.0.1 — 2026-05-17
 
-Rebrand + Windows accuracy pass. Repo temporarily private during pre-launch test-drive.
+Rebrand + Windows accuracy pass. This version was tested with a small group before the public launch.
 
 - **Renamed** from `codex-tour` to **NewCodexer** (skill slug `new-codexer`) to match the NewClauder naming family.
 - **Windows support corrected.** Codex CLI requires **WSL2** on Windows — the previous README/install.md implied native PowerShell worked, which is false per OpenAI's official requirements. Updated §7a (terminal-opening), §7b (install path), and `references/install.md` Windows section to walk through `wsl --install` first, then install Node + Codex *inside* the Ubuntu/WSL2 shell.
