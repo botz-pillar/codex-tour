@@ -185,4 +185,3 @@ Copy the exact error, paste it into the Codex chat panel with *"what does this m
 - [README.md](./README.md) — main install path (terminal-based)
 - [OFFLINE-INSTALL.md](./OFFLINE-INSTALL.md) — for machines with no GitHub access
 - [TRAINING.md](./TRAINING.md) — 1-hour runbook for training a team
-- [TESTING.md](./TESTING.md) — walkthrough of what the tour actually does

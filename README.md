@@ -351,7 +351,7 @@ You don't need any of this for the tour. Bookmark this section for the *day afte
 → The install didn't put `codex` on your `$PATH`, or the terminal window predates the install. Open a new terminal and try again. If it still fails, re-run the install step from [section 7](#7-install-the-codex-cli-on-your-computer). To verify the install on the *right* terminal: `codex --version` should print a version string.
 
 **"`codex plugin marketplace add` says authentication failed / repository not found (for a repo I know exists)."**
-→ The plugin source is a private GitHub repo and your git credentials aren't wired up on this machine. Either run `gh auth login` (HTTPS path) or make sure your SSH key is loaded (`ssh -T git@github.com` should greet you). Then re-run the `marketplace add` — or use the SSH URL form: `codex plugin marketplace add git@github.com:owner/repo.git`.
+→ Your git credentials aren't wired up on this machine. Either run `gh auth login` (HTTPS path) or make sure your SSH key is loaded (`ssh -T git@github.com` should greet you). Then re-run the `marketplace add` — or use the SSH URL form: `codex plugin marketplace add git@github.com:owner/repo.git`.
 
 **"It installed but the tour won't start."**
 → Try one of the trigger phrases in [section 9](#9-start-the-tour) verbatim — exact wording like *"I'm new to Codex CLI, walk me through it"* works best. If still nothing, prefix your message with `$new-codexer` to force-invoke it.

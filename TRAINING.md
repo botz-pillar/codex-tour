@@ -2,7 +2,7 @@
 
 A trainer's runbook for walking a small InfoSec team (5–15 people) from "what's a Codex CLI?" to "I just produced my first real artifact with an AI agent" in about 60 minutes.
 
-Designed for the way Josh demos: live screen-share, plain-English, audience asks questions throughout, no slide-deck slop. Voice mirrors the README — define jargon inline, lead with safety, concrete > abstract.
+Format: live screen-share, plain-English, audience asks questions throughout, no slide-deck slop. Voice mirrors the README — define jargon inline, lead with safety, concrete > abstract.
 
 This is a **trainer's outline**, not a deck. Read it through once before you run the session; bring it open in a second window during the demo.
 
@@ -39,7 +39,7 @@ Adjust org-specific bits (Enterprise seat, sample-data prompt) before sending.
 | Open | 5 min | Why we're here. What this is and isn't. |
 | Concept anchor | 10 min | The mental model + the safety story |
 | Install the tour | 5 min | Everyone gets NewCodexer running |
-| Live demo | 15 min | Josh runs the tour on himself, narrated |
+| Live demo | 15 min | Trainer runs the tour on themselves, narrated |
 | Hands-on | 15 min | Each person runs the tour on themselves, role-matched |
 | Q&A + close | 10 min | Pitfalls, what's next, where to ask for help |
 
